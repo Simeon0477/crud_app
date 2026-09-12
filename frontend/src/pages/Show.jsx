@@ -69,7 +69,7 @@ export default function Show() {
     }
 
     return (
-        <div className="min-h-screen w-full bg-sky-300 px-4 py-10">
+        <div className="min-h-screen w-full bg-sky-300 px-4 pt-20">
 
             <div className="mx-auto w-full max-w-7xl">
 
@@ -112,10 +112,10 @@ export default function Show() {
 
                                 <tr>
                                     <th className="px-6 py-4 text-left">#</th>
+                                    <th className="px-6 py-4 text-left">Matricule</th>
                                     <th className="px-6 py-4 text-left">Nom</th>
                                     <th className="px-6 py-4 text-left">Prénom</th>
                                     <th className="px-6 py-4 text-left">Classe</th>
-                                    <th className="px-6 py-4 text-left">Âge</th>
                                     <th className="px-6 py-4 text-center" colSpan="3">
                                         Opérations
                                     </th>
@@ -160,6 +160,10 @@ export default function Show() {
                                                 {ind + 1}
                                             </td>
 
+                                            <td className="px-6 py-4">
+                                                {etudiant.matricule} 
+                                            </td>
+
                                             <td className="px-6 py-4 font-medium">
                                                 {etudiant.nom}
                                             </td>
@@ -170,10 +174,6 @@ export default function Show() {
 
                                             <td className="px-6 py-4">
                                                 {etudiant.classe}
-                                            </td>
-
-                                            <td className="px-6 py-4">
-                                                {etudiant.age} ans
                                             </td>
 
                                             <td className="px-6 py-4 text-center">
@@ -258,6 +258,16 @@ export default function Show() {
 
                             <div>
                                 <p className="text-sm text-gray-500">
+                                    Matricule
+                                </p>
+
+                                <p className="font-semibold text-gray-800">
+                                    {selectedEtudiant.matricule}
+                                </p>
+                            </div>
+
+                            <div>
+                                <p className="text-sm text-gray-500">
                                     Nom
                                 </p>
 
@@ -283,6 +293,16 @@ export default function Show() {
 
                                 <p className="font-semibold text-gray-800">
                                     {selectedEtudiant.classe}
+                                </p>
+                            </div>
+
+                            <div>
+                                <p className="text-sm text-gray-500">
+                                    Sexe
+                                </p>
+
+                                <p className="font-semibold text-gray-800">
+                                    {selectedEtudiant.sexe === 'M' ? 'Masculin' : 'Feminin'}
                                 </p>
                             </div>
 

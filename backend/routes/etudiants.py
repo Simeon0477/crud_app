@@ -41,8 +41,10 @@ def create_etudiant(
     db: Session = Depends(get_db)
 ):
     nouvel_etudiant = Etudiant(
+        matricule=etudiant.matricule,
         nom=etudiant.nom,
         prenom=etudiant.prenom,
+        sexe=etudiant.sexe,
         classe=etudiant.classe,
         age=etudiant.age
     )
@@ -73,8 +75,10 @@ def update_etudiant(
             detail="Étudiant introuvable"
         )
 
+    etudiant_existant.matricule = etudiant.matricule
     etudiant_existant.nom = etudiant.nom
     etudiant_existant.prenom = etudiant.prenom
+    etudiant_existant.sexe = etudiant.sexe
     etudiant_existant.classe = etudiant.classe
     etudiant_existant.age = etudiant.age
 

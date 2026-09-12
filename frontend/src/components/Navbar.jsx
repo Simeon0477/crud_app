@@ -25,7 +25,7 @@ export default function Navbar(){
                         </Link>
 
                         <Link
-                            to="/show"
+                            to="/students"
                             className="text-gray-700 hover:text-blue-600 transition"
                         >
                             Afficher

@@ -13,8 +13,10 @@ export default function Update() {
     const id = searchParams.get('id')
 
     const [etudiant, setEtudiant] = useState({
+        matricule: '',
         nom: '',
         prenom: '',
+        sexe: '',
         classe: '',
         age: ''
     })
@@ -106,7 +108,7 @@ export default function Update() {
 
 
     return (
-        <div className="min-h-screen w-full bg-sky-300 px-4 py-10">
+        <div className="min-h-screen w-full bg-sky-300 px-4 pt-20">
 
             <div className="mx-auto w-full max-w-xl">
 
@@ -117,19 +119,10 @@ export default function Update() {
                             Modifier un étudiant
                         </h1>
 
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-700">
                             Modification de l'étudiant #{id}
                         </p>
                     </div>
-
-                    <Link
-                        to="/students"
-                        className="rounded-lg bg-gray-200 px-4 py-2
-                                   text-sm font-semibold text-gray-700
-                                   hover:bg-gray-300"
-                    >
-                        Retour
-                    </Link>
 
                 </div>
 
@@ -147,6 +140,29 @@ export default function Update() {
 
 
                     <div className="space-y-5">
+
+                        <div>
+                            <label
+                                htmlFor="matricule"
+                                className="mb-2 block text-sm font-semibold text-gray-700"
+                            >
+                                Matricule
+                            </label>
+
+                            <input
+                                id="matricule"
+                                type="text"
+                                name="matricule"
+                                value={etudiant.matricule}
+                                onChange={handleChange}
+                                required
+                                className="w-full rounded-lg border border-gray-300
+                                           px-4 py-3 outline-none transition
+                                           focus:border-sky-500
+                                           focus:ring-2 focus:ring-sky-200"
+                            />
+                        </div>
+
 
                         <div>
                             <label
@@ -191,6 +207,40 @@ export default function Update() {
                                            focus:border-sky-500
                                            focus:ring-2 focus:ring-sky-200"
                             />
+                        </div>
+
+
+                        <div>
+                            <label
+                                htmlFor="sexe"
+                                className="mb-2 block text-sm font-semibold text-gray-700"
+                            >
+                                Sexe
+                            </label>
+
+                            <select
+                                id="sexe"
+                                name="sexe"
+                                value={etudiant.sexe}
+                                onChange={handleChange}
+                                required
+                                className="w-full rounded-lg border border-gray-300
+                                           bg-white px-4 py-3 outline-none transition
+                                           focus:border-sky-500
+                                           focus:ring-2 focus:ring-sky-200"
+                            >
+                                <option value="">
+                                    Sélectionner le sexe
+                                </option>
+
+                                <option value="M">
+                                    Masculin
+                                </option>
+
+                                <option value="F">
+                                    Féminin
+                                </option>
+                            </select>
                         </div>
 
 

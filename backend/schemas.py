@@ -2,8 +2,10 @@ from pydantic import BaseModel
 
 
 class EtudiantBase(BaseModel):
+    matricule: str
     nom: str
     prenom: str
+    sexe: str
     classe: str
     age: int
 
